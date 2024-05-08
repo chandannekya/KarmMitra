@@ -7,9 +7,18 @@ function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const inputs = [
+    { placeholder: "Email", type: "email", value: email, setter: setEmail },
+    {
+      placeholder: "Password",
+      type: "password",
+      value: password,
+      setter: setPassword,
+    },
+  ];
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
     // backend work
   };
 
@@ -18,23 +27,17 @@ function SignUpPage() {
       <div className={style.content}>
         <h1>Sign In</h1>
         <form onSubmit={handleSubmit}>
-          <Input
-            className={style.input}
-            variant="outlined"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-          <Input
-            className={style.input}
-            variant="outlined"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-
+          {inputs.map((input, index) => (
+            <Input
+              key={index}
+              className={style.input}
+              placeholder={input.placeholder}
+              variant="outlined"
+              type={input.type}
+              value={input.value}
+              onChange={(event) => input.setter(event.target.value)}
+            />
+          ))}
           <Button type="submit" variant="contained">
             Sign In
           </Button>
