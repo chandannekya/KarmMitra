@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const clientSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+         required: true
     },
     mobile_number: {
         type: Number,
@@ -34,7 +34,7 @@ const clientSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        pin_code: {
+        pincode: {
             type: String,
             required: true
         }

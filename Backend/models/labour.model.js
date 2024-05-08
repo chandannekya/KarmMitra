@@ -28,7 +28,7 @@ const labourSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        pin_code: {
+        pincode: {
             type: Number,
             required: true
         }

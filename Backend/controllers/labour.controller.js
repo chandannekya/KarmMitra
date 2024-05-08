@@ -40,8 +40,9 @@ exports.signin = async (req, res) => {
 
         res.status(200).send({
             name: labour.name,
-            userId: labour.trade,
-            email: labour.mobile_number
+            trade: labour.trade,
+            mobile_number: labour.mobile_number
+
         });
 
     } catch (err) {

@@ -3,7 +3,9 @@ const mongoose = require("mongoose")
 const app = express()
 const port = 3000
 
-const url = "mongodb+srv://mohammadsahil4343:HnU8UIRiVAqwbEhf@karmmitra.i7jrwwy.mongodb.net/?retryWrites=true&w=majority&appName=KarmMitra"
+app.use(express.json());
+
+const url = "mongodb://127.0.0.1:27017/KarmMitra"
 
 mongoose.connect(url)
 
