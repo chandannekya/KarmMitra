@@ -1,12 +1,16 @@
-import "./App.css";
-import Container from "./components/Container";
-import SignUpPage from "./components/SignIn-SignUp/SignUpPage";
-import SignInPage from "./components/SignIn-SignUp/SignInPage";
+import Page from './components/Hero-Section/Page'
+import LabourCard from './components/Hero-Section/LabourCard'
+import React from 'react'
 
-let isLoggedIn = true; // Backend logic work
-
-function App() {
-  return <Container>{isLoggedIn ? <SignInPage /> : <SignUpPage />}</Container>;
+const App = () => {
+  return (
+    <div>
+     
+      <Page />
+      <LabourCard/>
+    
+    </div>
+  )
 }
 
-export default App;
+export default App
