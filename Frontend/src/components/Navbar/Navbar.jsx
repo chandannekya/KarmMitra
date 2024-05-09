@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
 
@@ -19,9 +19,9 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-black flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
-      <h1 className="w-full text-3xl font-bold text-[#00df9a]">KarmMitra </h1>
-
+    <div className="bg-black flex justify-between items-center h-24   px-4 text-white">
+      {/* <h1 className="w-full text-3xl font-bold text-[#00df9a]">KarmMitra </h1> */}
+      <NavLink className="w-full text-3xl font-bold text-[#00df9a]" to="/">KarmMitra</NavLink>
       <input
         type="text"
         placeholder="Search..."
@@ -29,7 +29,16 @@ const Navbar = () => {
         onChange={handleSearchChange}
         className="md:flex hidden bg-white text-black p-2 rounded-md"
       />
-      <ul className="hidden md:flex">
+      <div className=" hidden md:flex">
+        <NavLink className="p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black" to="/">
+          Home
+        </NavLink>
+        
+        <NavLink className="p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black" to="/category">Category</NavLink>
+        <NavLink className="p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black" to="/signin">SignIn</NavLink>
+        <NavLink className="p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black" to="/signup">SignUp</NavLink>
+        </div>
+             {/* <ul className="hidden md:flex">
         {navItems.map((item) => (
           <li
             key={item.id}
@@ -38,7 +47,7 @@ const Navbar = () => {
             {item.text}
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       {/* Mobile Navigation  */}
       <div onClick={handleNav} className="block md:hidden">
@@ -55,16 +64,24 @@ const Navbar = () => {
         <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">
           KarmMitra
         </h1>
-
-        {navItems.map((item) => (
+        <div className="flex flex-col">
+        <NavLink className="p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600" to="/">
+          Home
+        </NavLink>
+        
+        <NavLink className="p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600" to="/category">Category</NavLink>
+        <NavLink className="p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600" to="/signin">SignIn</NavLink>
+        <NavLink className="p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600" to="/signup">SignUp</NavLink>
+        </div>
+        {/* {navItems.map((item) => (
           <li
             key={item.id}
             className="p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600"
           >
             {item.text}
           </li>
-        ))}
-      </ul>
+        ))} */}
+      </ul> 
     </div>
   );
 };
