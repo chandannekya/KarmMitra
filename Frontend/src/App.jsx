@@ -1,16 +1,16 @@
-import Page from './components/Hero-Section/Page'
-import LabourCard from './components/Hero-Section/LabourCard'
-import React from 'react'
+import Page from "./components/Hero-Section/Page";
+import LabourCard from "./components/Hero-Section/LabourCard";
+import Navbar from "./components/Navbar/Navbar";
+import React from "react";
 
 const App = () => {
   return (
-    <div>
-     
+    <>
+      <Navbar />
       <Page />
-      <LabourCard/>
-    
-    </div>
-  )
-}
+      <LabourCard />
+    </>
+  );
+};
 
-export default App
+export default App;
