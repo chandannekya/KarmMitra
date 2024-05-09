@@ -7,19 +7,28 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
+  const [searchInput, setSearchInput] = useState("");
 
+  const handleSearchChange = (event) => {
+    setSearchInput(event.target.value);
+  };
   const navItems = [
     { id: 1, text: "Home" },
-    { id: 2, text: "Company" },
-    { id: 3, text: "Resources" },
-    { id: 4, text: "About" },
-    { id: 5, text: "Contact" },
+    { id: 2, text: "Category" },
+    { id: 3, text: "SignIn" },
   ];
 
   return (
     <div className="bg-black flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
-      <h1 className="w-full text-3xl font-bold text-[#00df9a]">REACT.</h1>
+      <h1 className="w-full text-3xl font-bold text-[#00df9a]">KarmMitra </h1>
 
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchInput}
+        onChange={handleSearchChange}
+        className="md:flex hidden bg-white text-black p-2 rounded-md"
+      />
       <ul className="hidden md:flex">
         {navItems.map((item) => (
           <li
@@ -43,7 +52,9 @@ const Navbar = () => {
             : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
         }
       >
-        <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">REACT.</h1>
+        <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">
+          KarmMitra
+        </h1>
 
         {navItems.map((item) => (
           <li
