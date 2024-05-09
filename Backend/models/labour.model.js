@@ -58,7 +58,7 @@ const labourSchema = new mongoose.Schema({
             default: []
         },
         feedback: {
-            type: [String],
+            type: [{client:String , comment: String }],
             default: []
         }
     }
