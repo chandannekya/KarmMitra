@@ -11,6 +11,7 @@ exports.signup = async (req, res) => {
         address: req.body.address,
         trade: req.body.trade
     };
+    
 
     try {
         await labourModel.create(labour);
