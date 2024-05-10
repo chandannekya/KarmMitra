@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const labourModel = require("../models/labour.model");
+const jwt = require("jsonwebtoken")
 
 exports.signup = async (req, res) => {
     const labour = {
@@ -37,12 +38,16 @@ exports.signin = async (req, res) => {
                 message: "Wrong password"
             });
         }
+const secret = "This is my secret"
+        const token = jwt.sign({id : labour.id} , secret , {
+            expiresIn : 3600 
+        })
 
         res.status(200).send({
             name: labour.name,
             trade: labour.trade,
-            mobile_number: labour.mobile_number
-
+            mobile_number: labour.mobile_number,
+            token : token
         });
 
     } catch (err) {
