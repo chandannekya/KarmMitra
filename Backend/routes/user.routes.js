@@ -1,6 +1,6 @@
 const labourController = require("../controllers/labour.controller")
 const clientController = require("../controllers/client.controller")
-
+const authMw = require("../middlewares/auth.mw")
 module.exports = (app) =>{
     app.post("/karmMitra/labour/signup" , labourController.signup)
     app.post("/karmMitra/labour/signin" , labourController.signin)
