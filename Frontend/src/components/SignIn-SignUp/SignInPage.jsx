@@ -75,6 +75,11 @@ const SignInPage = () => {
           >
             SignIn using Facebook
           </button>
+          <div className="flex justify-center items-center">
+            <a className="text-blue-500 no-underline">
+              Don&apos;t have account? SignUp
+            </a>
+          </div>
         </div>
       </form>
     </div>
