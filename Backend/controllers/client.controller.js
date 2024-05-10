@@ -1,6 +1,6 @@
 const clientModel = require("../models/client.model")
 const bcrypt = require("bcryptjs")
-
+const jwt = require("jsonwebtoken")
 exports.signup = async(req , res)=> {
 
     
@@ -40,11 +40,17 @@ exports.signin = async(req , res)=> {
             })
         }
 
-        res.status(200).send({
-            name : client.name ,
-            mobile_number : client.mobile_number , 
-            email : client.email,
+        const secret = "This is my secret"
+        const token = jwt.sign({id : client.id} , secret , {
+            expiresIn : 3600 
         })
+
+        res.status(200).send({
+            name: client.name,
+            email : client.email,
+            mobile_number: client.mobile_number,
+            token : token
+        });
 
 
     }catch(err) {

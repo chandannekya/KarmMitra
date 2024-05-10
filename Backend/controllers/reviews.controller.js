@@ -5,7 +5,6 @@ exports.upvotes = async (req, res) => {
     try {
         const labour = await labourModel.findById(req.body.labourId);
         const client = await clientModel.findById(req.body.clientId);
-
         labour.reviews.upvote.push(client._id);
         labour.save();
 
