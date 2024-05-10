@@ -78,6 +78,7 @@ const SignInPage = () => {
         </div>
       </form>
     </div>
+    
   );
 };
 

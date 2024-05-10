@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const SignUpPage = () => {
   const [name, setName] = useState("");
@@ -86,11 +88,13 @@ const SignUpPage = () => {
           </button>
         </div>
         <div className="flex justify-center items-center">
-          <a className="text-blue-500 no-underline">
-            already have account? SignIn
-          </a>
+          <p className="text-blue-500 no-underline">
+            already have account? <NavLink to="/signin">SignIn</NavLink> 
+          </p>
         </div>
       </form>
+      
+
     </div>
   );
 };
