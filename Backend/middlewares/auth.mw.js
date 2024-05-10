@@ -1,8 +1,19 @@
 const labourModel = require("../models/labour.model")
 const clientModel = require("../models/client.model")
 const jwt = require("jsonwebtoken")
+const validator = require("email-validator");
 
-
+/**const verifyEmail = (req, res , next) =>{
+    if (validator.validate(req.body.email)) {
+        console.log("Email is valid");
+        next()
+      } else {
+        console.log("Email is invalid");
+        return res.status(403).send({
+            message : "Email is not valid"
+        })
+      }
+}**/
 
 const verifyToken = (req, res, next) => {
     const token = req.headers["access-token"];
@@ -41,5 +52,6 @@ const verifyToken = (req, res, next) => {
 };
 
 module.exports = {
-    verifyToken : verifyToken
+    verifyToken : verifyToken,
+    //verifyEmail : verifyEmail
 }
