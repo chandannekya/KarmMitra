@@ -5,6 +5,7 @@ import SignInPage from "./components/SignInPage";
 import { Routes } from "react-router-dom";
 import LabourProfile from "./components/Hero-Section/LabourProfile";
 import Navbar from "./components/Navbar/Navbar";
+import Carousel from "./components/Hero-Section/Carousel";
 // import Navbar from "./components/Navbar/Navbar";
 // import Page from "./components/Hero-Section/Page";
 // import LabourCard from "./components/Hero-Section/LabourCard";
@@ -12,26 +13,12 @@ import Navbar from "./components/Navbar/Navbar";
 const App = () => {
   return (
     <>
-
-    <Navbar/>
+      <Navbar />
+      <Carousel></Carousel>
       <Routes>
-     
-        
-    
-     
-
-        <Route path="/signup" element={<SignUpPage/>}/> 
-        <Route path="/signin" element={<SignInPage/>} />
-
-     </Routes>
-
-
-
-
-    
-
-
-
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/signin" element={<SignInPage />} />
+      </Routes>
     </>
   );
 };
