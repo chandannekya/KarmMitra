@@ -6,6 +6,7 @@ import { Routes } from "react-router-dom";
 import LabourProfile from "./components/Hero-Section/LabourProfile";
 import Navbar from "./components/Navbar/Navbar";
 import Carousel from "./components/Hero-Section/Carousel";
+import SidePanel from "./components/Hero-Section/SidePannel";
 // import Navbar from "./components/Navbar/Navbar";
 // import Page from "./components/Hero-Section/Page";
 // import LabourCard from "./components/Hero-Section/LabourCard";
@@ -15,6 +16,7 @@ const App = () => {
     <>
       <Navbar />
       <Carousel></Carousel>
+      <SidePanel></SidePanel>
       <Routes>
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/signin" element={<SignInPage />} />
